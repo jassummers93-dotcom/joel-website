@@ -1,0 +1,72 @@
+---
+const skills = [
+  'Audio Design and Implementation | Interactive Audio Systems | Field and Foley Recording | Mixing and Mastering',
+  'Vehicles | Environments | UI | Dialogue | Music',
+  'Perforce | Plastic SCM | GitLab',
+  'JIRA | Confluence',
+  'Unreal Engine | Unity',
+  'REAPER | Sound Forge | Reason | Cubase | Pro Tools | iZotope RX',
+  'Wwise | FMOD'
+];
+---
+
+<section id="about" class="py-24 md:py-32 relative">
+  <div class="section-container">
+    <!-- Background Image -->
+    <div class="absolute inset-0 opacity-20">
+      <img
+        src="/images/profile/joel-summers.jpg"
+        alt="Joel Summers"
+        class="w-full h-full object-cover rounded-2xl"
+      />
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative z-10 text-center animate-on-scroll">
+        <span class="text-accent font-medium text-sm uppercase tracking-widest mb-4 block">About Me</span>
+        <h2 class="section-heading">
+          Crafting Immersive Audio Experiences
+        </h2>
+
+        <div class="space-y-4 text-text-muted leading-relaxed mb-8">
+          <p>
+            Skilled in creative and technical aspects of audio design, I most recently worked as a
+            <strong class="text-text-primary">Senior Audio Artist at Codemasters (EA)</strong>.
+            My focus is on building engaging and polished audio experiences that enhance gameplay
+            and player immersion.
+          </p>
+          <p>
+            With a background spanning music, live audio, recording, and sound design, I've developed a deep understanding of how sound shapes experiences. My work on AAA titles such as EA Sports WRC, DIRT 5, and GRID Legends has allowed me to push the boundaries of immersive audio and rich environmental soundscapes.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-8">
+          <h3 class="text-sm uppercase tracking-widest text-text-muted mb-4">Expertise</h3>
+          <div class="flex flex-wrap justify-center gap-2">
+            {skills.map((skill) => (
+              <span class="px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded-full text-sm text-text-primary">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- View CV Button -->
+        <div class="mt-8">
+          <a
+            href="https://1drv.ms/b/c/28acc9b7d11da54a/IQDeiT5qXOugRJuF3SfObh6jAdbE640NnT3JvcJZhi1Llsw?e=eRBaOo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent/90 transition-colors"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            View CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

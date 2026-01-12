@@ -1,0 +1,100 @@
+---
+import credits from '../data/credits.json';
+---
+
+<section id="credits" class="py-24 md:py-32">
+  <div class="section-container">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="text-accent font-medium text-sm uppercase tracking-widest mb-4 block">Experience</span>
+      <h2 class="section-heading">Credits & Work History</h2>
+      <p class="text-text-muted max-w-2xl mx-auto">
+        Over 10 years of professional experience delivering high-quality sound design and recording across AAA games, film, and television, specialising in immersive audio experiences and detailed environmental soundscapes.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <!-- Sound Designer Credits -->
+      <div class="animate-on-scroll">
+        <h3 class="flex items-center gap-3 text-xl font-display font-semibold mb-8">
+          <span class="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+          </span>
+          Sound Designer
+        </h3>
+
+        <div class="space-y-4">
+          {credits.soundDesigner.map((credit) => (
+            <div class="card p-4 hover:border-accent/50 transition-colors">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-semibold text-text-primary truncate">{credit.project}</h4>
+                  <p class="text-text-muted text-sm">{credit.role}</p>
+                  {credit.company && (
+                    <p class="text-text-muted/60 text-xs mt-1">{credit.company}</p>
+                  )}
+                </div>
+                <span class="text-xs text-text-muted/60 whitespace-nowrap">{credit.period}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Sound Recordist Credits -->
+      <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+        <h3 class="flex items-center gap-3 text-xl font-display font-semibold mb-8">
+          <span class="w-10 h-10 bg-accent-secondary/20 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </span>
+          Sound Recordist
+        </h3>
+
+        <div class="space-y-4">
+          {credits.soundRecordist.map((credit) => (
+            <div class="card p-4 hover:border-accent-secondary/50 transition-colors">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <h4 class="font-semibold text-text-primary truncate">{credit.project}</h4>
+                  <p class="text-text-muted text-sm">{credit.role}</p>
+                  {credit.company && (
+                    <p class="text-text-muted/60 text-xs mt-1">{credit.company}</p>
+                  )}
+                </div>
+                <span class="text-xs text-text-muted/60 whitespace-nowrap">{credit.period}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- External Credit Links -->
+    <div class="mt-16 text-center animate-on-scroll">
+      <p class="text-text-muted mb-6">View full credits on:</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="https://www.imdb.com/name/nm7450418/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border rounded-lg hover:border-accent hover:text-accent transition-all duration-300"
+        >
+          <img src="/images/icons/imdb_edited.png" alt="IMDB" class="w-5 h-5 object-contain" />
+          IMDB
+        </a>
+        <a
+          href="https://www.mobygames.com/person/863959/joel-summers/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border rounded-lg hover:border-accent hover:text-accent transition-all duration-300"
+        >
+          <img src="/images/icons/mobygames_edited.png" alt="MobyGames" class="w-5 h-5 object-contain" />
+          MobyGames
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ea-wrc",
+    "title": "EA Sports WRC",
+    "role": "Senior Audio Designer",
+    "period": "March 2021 - April 2025",
+    "thumbnail": "/images/game_thumbnails/ea-wrc.JPG",
+    "videoId": "JFy_cWefBtQ",
+    "featured": true
+  },
+  {
+    "id": "grid-legends",
+    "title": "GRID Legends",
+    "role": "Audio Designer",
+    "period": "March - July 2021",
+    "thumbnail": "/images/game_thumbnails/grid-legends.jpg",
+    "videoId": "1Vgj1I3YG8g",
+    "featured": true
+  },
+  {
+    "id": "dirt-5",
+    "title": "DIRT 5",
+    "role": "Audio Designer",
+    "period": "November 2019 - December 2020",
+    "thumbnail": "/images/game_thumbnails/dirt-5.JPG",
+    "videoId": "K96Pe0jvpfk",
+    "featured": true
+  },
+  {
+    "id": "grid-2019",
+    "title": "GRID (2019)",
+    "role": "Audio Designer",
+    "period": "March - October 2019",
+    "thumbnail": "/images/game_thumbnails/grid.jpg",
+    "videoId": "Lv9lm4K9Sek",
+    "featured": true
+  },
+  {
+    "id": "dirt-rally-2",
+    "title": "Dirt Rally 2.0",
+    "role": "Audio Designer",
+    "period": "August 2018 - February 2019",
+    "thumbnail": "/images/game_thumbnails/dirt-rally-2.jpg",
+    "videoId": "RQ7JvIncd4Y",
+    "featured": true
+  }
+]

@@ -1,0 +1,157 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import projects from '../data/projects.json';
+---
+
+<section id="projects" class="py-24 md:py-32 bg-surface/30">
+  <div class="section-container">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="text-accent font-medium text-sm uppercase tracking-widest mb-4 block">Portfolio</span>
+      <h2 class="section-heading">AAA Game Projects</h2>
+      <p class="text-text-muted max-w-2xl mx-auto">
+        A selection of major titles I've contributed to as an Audio Designer at Codemasters,
+        specializing in vehicle audio, environmental soundscapes, and gameplay audio.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {projects.map((project, index) => (
+        <div class="animate-on-scroll" style={`transition-delay: ${index * 0.1}s;`}>
+          <ProjectCard
+            title={project.title}
+            role={project.role}
+            period={project.period}
+            thumbnail={project.thumbnail}
+            videoId={project.videoId}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Work Demonstrations -->
+    <div class="mt-16 animate-on-scroll">
+      <h3 class="text-xl font-display font-semibold mb-6 text-center">Work Demonstrations</h3>
+      <div class="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <!-- Audio Portfolio -->
+        <div class="video-card card group cursor-pointer" data-video-id="y4KD9_GqrI8">
+          <!-- Thumbnail -->
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              src="https://img.youtube.com/vi/y4KD9_GqrI8/maxresdefault.jpg"
+              alt="Audio Portfolio"
+              class="w-full h-full object-cover transition-transform duration-500"
+              loading="lazy"
+            />
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Play Button -->
+            <div class="play-icon absolute inset-0 flex items-center justify-center opacity-80 transition-all duration-300">
+              <div class="w-16 h-16 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30">
+                <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sound Design Reel -->
+        <div class="video-card card group cursor-pointer" data-video-id="rfkACJYzsa0">
+          <!-- Thumbnail -->
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              src="https://img.youtube.com/vi/rfkACJYzsa0/maxresdefault.jpg"
+              alt="Sound Design Reel"
+              class="w-full h-full object-cover transition-transform duration-500"
+              loading="lazy"
+            />
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+            <!-- Play Button -->
+            <div class="play-icon absolute inset-0 flex items-center justify-center opacity-80 transition-all duration-300">
+              <div class="w-16 h-16 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center shadow-lg shadow-accent/30">
+                <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div
+  id="video-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-background/95 backdrop-blur-sm"
+>
+  <button
+    id="modal-close"
+    class="absolute top-4 right-4 text-text-muted hover:text-text-primary transition-colors p-2"
+    aria-label="Close video"
+  >
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <div class="w-full max-w-5xl mx-4 aspect-video">
+    <iframe
+      id="video-iframe"
+      class="w-full h-full rounded-lg"
+      src=""
+      title="Project Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  // Video modal functionality
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('video-iframe') as HTMLIFrameElement;
+  const closeBtn = document.getElementById('modal-close');
+
+  document.querySelectorAll('.video-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const videoId = card.getAttribute('data-video-id');
+      if (videoId && iframe && modal) {
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  function closeModal() {
+    if (modal && iframe) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>

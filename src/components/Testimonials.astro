@@ -1,0 +1,61 @@
+---
+// Placeholder testimonials - replace with actual content
+const testimonials = [
+  {
+    quote: "I worked closely with Joel for six years as his lead and manager. He was a key part of our audio team, contributing to the sound of WRC and Dirt Rally 2.0. Joel brings a wide range of talents - from audio editing, field and studio recording, to mixing and creative sound design. He's highly skilled in technical audio work, especially with Wwise and Unreal Engine, and has a great ability to troubleshoot and problem-solve. On top of that, he's one of the kindest people I've worked with -always receptive to feedback and consistently delivers. Joel would be a valuable asset to any company.",
+    author: "Stuart Ross",
+    role: "Audio Director",
+    company: "Codemasters (EA)"
+  },
+  {
+    quote: "I worked alongside Joel for four years and managed him directly for one. As a senior generalist sound designer, he contributed to nearly every aspect of multiple games' audio and owned several key features. Joel's strengths are his creativity, technical skill in Unreal, and his ability to learn quickly, making him valuable across a broad range of tasks. He represented audio in cross-discipline meetings and led on features like UI sound, environmental ambience, and vehicle audio with precision. He would be a strong addition to any audio team and is clearly on the path to a lead role.",
+    author: "Scott Milne-Dawe",
+    role: "Audio Director",
+    company: "Codemasters (EA)"
+  },
+  {
+    quote: "Joel is a talented Sound Designer who creates high-quality sound effects with a distinct personal style. His humble, friendly nature allows him to integrate seamlessly into any team. It was a pleasure working with him, and I'm confident others will feel the same.",
+    author: "Frank Liu",
+    role: "Sound Designer",
+    company: "Expect Studio"
+  }
+];
+---
+
+<section id="testimonials" class="py-24 md:py-32 bg-surface/30">
+  <div class="section-container">
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="text-accent font-medium text-sm uppercase tracking-widest mb-4 block">Testimonials</span>
+      <h2 class="section-heading">What Colleagues Say</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div class="animate-on-scroll" style={`transition-delay: ${index * 0.1}s;`}>
+          <div class="card p-6 lg:p-8 h-full flex flex-col">
+            <!-- Quote Icon -->
+            <svg class="w-10 h-10 text-accent/30 mb-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+
+            <!-- Quote -->
+            <blockquote class="text-text-muted leading-relaxed mb-6 flex-1">
+              "{testimonial.quote}"
+            </blockquote>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3 pt-4 border-t border-border">
+              <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-secondary rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                {testimonial.author.split(' ').map(n => n[0]).join('')}
+              </div>
+              <div>
+                <p class="font-semibold text-text-primary text-sm">{testimonial.author}</p>
+                <p class="text-text-muted text-xs">{testimonial.role}, {testimonial.company}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
