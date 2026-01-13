@@ -27,15 +27,15 @@ import credits from '../data/credits.json';
         <div class="space-y-4">
           {credits.soundDesigner.map((credit) => (
             <div class="card p-4 hover:border-accent/50 transition-colors">
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex-1 min-w-0">
-                  <h4 class="font-semibold text-text-primary truncate">{credit.project}</h4>
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <div class="flex-1 min-w-0 mb-2 sm:mb-0">
+                  <h4 class="font-semibold text-text-primary break-words">{credit.project}</h4>
                   <p class="text-text-muted text-sm">{credit.role}</p>
                   {credit.company && (
                     <p class="text-text-muted/60 text-xs mt-1">{credit.company}</p>
                   )}
                 </div>
-                <span class="text-xs text-text-muted/60 whitespace-nowrap">{credit.period}</span>
+                <span class="text-xs text-text-muted/60 flex-shrink-0">{credit.period}</span>
               </div>
             </div>
           ))}
@@ -56,15 +56,15 @@ import credits from '../data/credits.json';
         <div class="space-y-4">
           {credits.soundRecordist.map((credit) => (
             <div class="card p-4 hover:border-accent-secondary/50 transition-colors">
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex-1 min-w-0">
-                  <h4 class="font-semibold text-text-primary truncate">{credit.project}</h4>
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <div class="flex-1 min-w-0 mb-2 sm:mb-0">
+                  <h4 class="font-semibold text-text-primary break-words">{credit.project}</h4>
                   <p class="text-text-muted text-sm">{credit.role}</p>
                   {credit.company && (
                     <p class="text-text-muted/60 text-xs mt-1">{credit.company}</p>
                   )}
                 </div>
-                <span class="text-xs text-text-muted/60 whitespace-nowrap">{credit.period}</span>
+                <span class="text-xs text-text-muted/60 flex-shrink-0">{credit.period}</span>
               </div>
             </div>
           ))}
