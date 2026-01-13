@@ -1,30 +1,13 @@
 ---
 const expertiseSections = [
   {
-    title: 'Sound',
+    title: 'Core Audio Skills',
     items:
-      'Design | Editing | Foley | Dialogue | Mixing | Sampling'
+      'Sound Design | Editing | Foley | Recording | Dialogue | Mixing & Mastering | Sample Creation'
   },
   {
-    title: 'Game Audio Domains',
-    items:
-      'Ambience | Footsteps | Combat | UI | Cutscenes | Music | Creatures | Props | Vehicles | Dialogue'
-  },
-  {
-    title: 'Audio Middleware & Engines',
+    title: 'Game Audio',
     items: 'Wwise | FMOD | Unreal Engine | Unity'
-  },
-  {
-    title: 'DAWs & Audio Tools',
-    items: 'REAPER | Sound Forge | Reason | Cubase | Pro Tools | iZotope RX'
-  },
-  {
-    title: 'Version Control',
-    items: 'Perforce | Plastic SCM | GitLab'
-  },
-  {
-    title: 'Project Management',
-    items: 'JIRA | Confluence'
   }
 ];
 ---
@@ -57,15 +40,15 @@ const expertiseSections = [
         <!-- Skills -->
         <div class="mb-8">
           <h3 class="text-sm uppercase tracking-widest text-text-muted mb-4">Expertise</h3>
-          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-center max-w-6xl mx-auto">
+          <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 justify-items-center max-w-4xl mx-auto">
             {expertiseSections.map((section) => (
-              <div class="card bg-surface/80 backdrop-blur-sm p-4 w-full max-w-sm text-center">
-                <h4 class="text-xs uppercase tracking-widest text-text-muted mb-2">
+              <div class="card bg-surface/80 backdrop-blur-sm p-6 w-full max-w-lg text-center">
+                <h4 class="text-sm uppercase tracking-widest text-text-muted mb-3">
                   {section.title}
                 </h4>
-                <div class="flex flex-wrap justify-center gap-2">
+                <div class="flex flex-wrap justify-center gap-3">
                   {section.items.split('|').map((item) => (
-                    <span class="px-2.5 py-1 bg-surface/80 border border-border rounded-full text-xs text-text-primary whitespace-normal leading-snug max-w-full break-words">
+                    <span class="px-3 py-1.5 bg-surface/80 border border-border rounded-full text-sm text-text-primary whitespace-normal leading-snug max-w-full break-words">
                       {item.trim()}
                     </span>
                   ))}
