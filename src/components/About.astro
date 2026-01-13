@@ -1,53 +1,76 @@
 ---
-const skills = [
-  'Audio Design and Implementation | Interactive Audio Systems | Field and Foley Recording | Mixing and Mastering',
-  'Vehicles | Environments | UI | Dialogue | Music',
-  'Perforce | Plastic SCM | GitLab',
-  'JIRA | Confluence',
-  'Unreal Engine | Unity',
-  'REAPER | Sound Forge | Reason | Cubase | Pro Tools | iZotope RX',
-  'Wwise | FMOD'
+const expertiseSections = [
+  {
+    title: 'Sound',
+    items:
+      'Design | Editing | Foley | Dialogue | Mixing | Sampling'
+  },
+  {
+    title: 'Game Audio Domains',
+    items:
+      'Ambience | Footsteps | Combat | UI | Cutscenes | Music | Creatures | Props | Vehicles | Dialogue'
+  },
+  {
+    title: 'Audio Middleware & Engines',
+    items: 'Wwise | FMOD | Unreal Engine | Unity'
+  },
+  {
+    title: 'DAWs & Audio Tools',
+    items: 'REAPER | Sound Forge | Reason | Cubase | Pro Tools | iZotope RX'
+  },
+  {
+    title: 'Version Control',
+    items: 'Perforce | Plastic SCM | GitLab'
+  },
+  {
+    title: 'Project Management',
+    items: 'JIRA | Confluence'
+  }
 ];
 ---
 
-<section id="about" class="py-24 md:py-32 relative">
+<section id="about" class="py-24 md:py-32">
   <div class="section-container">
-    <!-- Background Image -->
-    <div class="absolute inset-0 opacity-20">
-      <img
-        src="/images/profile/joel-summers.jpg"
-        alt="Joel Summers"
-        class="w-full h-full object-cover rounded-2xl"
-      />
-    </div>
-
-    <!-- Content Overlay -->
-    <div class="relative z-10 text-center animate-on-scroll">
+    <div class="text-center animate-on-scroll">
         <span class="text-accent font-medium text-sm uppercase tracking-widest mb-4 block">About Me</span>
         <h2 class="section-heading">
           Crafting Immersive Audio Experiences
         </h2>
 
-        <div class="space-y-4 text-text-muted leading-relaxed mb-8">
-          <p>
-            Skilled in creative and technical aspects of audio design, I most recently worked as a
-            <strong class="text-text-primary">Senior Audio Artist at Codemasters (EA)</strong>.
-            My focus is on building engaging and polished audio experiences that enhance gameplay
-            and player immersion.
-          </p>
-          <p>
-            With a background spanning music, live audio, recording, and sound design, I've developed a deep understanding of how sound shapes experiences. My work on AAA titles such as EA Sports WRC, DIRT 5, and GRID Legends has allowed me to push the boundaries of immersive audio and rich environmental soundscapes.
-          </p>
+        <div class="grid gap-6 md:gap-10 md:grid-cols-[280px_minmax(0,520px)] justify-center items-start max-w-6xl mx-auto mb-10">
+          <div class="card bg-surface/80 backdrop-blur-sm p-4 w-full max-w-[280px] mx-auto">
+            <img
+              src="/images/profile/joel-summers.jpg"
+              alt="Joel Summers"
+              class="w-full h-auto rounded-xl object-cover aspect-[4/5]"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="space-y-4 text-text-muted leading-relaxed text-center min-h-[350px] flex flex-col justify-center">
+            <p>
+              I’ve been fascinated by sound for over 15 years, which has taken me through a variety of roles in music, live audio, recording, and sound design. This journey eventually led me to game audio, where I’ve spent over 10 years crafting sounds for games - including more than 7 years on AAA titles. Most recently, I worked as a Senior Audio Artist at Codemasters (EA), creating immersive audio and detailed environmental soundscapes for games like EA Sports WRC, DIRT 5, and GRID Legends.
+            </p>
+          </div>
         </div>
 
         <!-- Skills -->
         <div class="mb-8">
           <h3 class="text-sm uppercase tracking-widest text-text-muted mb-4">Expertise</h3>
-          <div class="flex flex-wrap justify-center gap-2">
-            {skills.map((skill) => (
-              <span class="px-3 py-1.5 bg-surface/80 backdrop-blur-sm border border-border rounded-full text-sm text-text-primary">
-                {skill}
-              </span>
+          <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-center max-w-6xl mx-auto">
+            {expertiseSections.map((section) => (
+              <div class="card bg-surface/80 backdrop-blur-sm p-4 w-full max-w-sm text-center">
+                <h4 class="text-xs uppercase tracking-widest text-text-muted mb-2">
+                  {section.title}
+                </h4>
+                <div class="flex flex-wrap justify-center gap-2">
+                  {section.items.split('|').map((item) => (
+                    <span class="px-2.5 py-1 bg-surface/80 border border-border rounded-full text-xs text-text-primary whitespace-normal leading-snug max-w-full break-words">
+                      {item.trim()}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
